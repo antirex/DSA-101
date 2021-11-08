@@ -4,8 +4,8 @@ class Solution {
         else{
             HashMap<Character,Integer> mapMag = new HashMap<>();
             for(int i =0;i<magazine.length();i++){
-                if(mapMag.get(magazine.charAt(i))!=null) mapMag.put(magazine.charAt(i),mapMag.get(magazine.charAt(i))+1);
-                else mapMag.put(magazine.charAt(i),1);
+                char temp = magazine.charAt(i);
+                mapMag.put(temp,mapMag.getOrDefault(temp,0)+1); //if null then 0 else add +1 to existing          
             }
             for(int i =0;i<ransomNote.length();i++){
                 char temp = ransomNote.charAt(i);
