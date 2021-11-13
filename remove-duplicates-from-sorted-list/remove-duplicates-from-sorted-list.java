@@ -8,18 +8,38 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode dummy = new ListNode(101,null);
+        if (head == null) return null;
         ListNode ptr = head;
-        ListNode dummyPtr = dummy;
-        while(ptr!=null){
-            if(ptr.val != dummyPtr.val){
-                dummyPtr.next = new ListNode(ptr.val);
-                dummyPtr = dummyPtr.next;
+        while(ptr.next!=null){
+            if(ptr.val == ptr.next.val){
+                ptr.next = ptr.next.next;
             }
-            ptr = ptr.next;
+            else ptr = ptr.next;
         }
-        return dummy.next;
+        return head;
     }
 }
+
+
+
+
+
+
+// class Solution {
+//     public ListNode deleteDuplicates(ListNode head) {
+//         ListNode dummy = new ListNode(101,null);
+//         ListNode ptr = head;
+//         ListNode dummyPtr = dummy;
+//         while(ptr!=null){
+//             if(ptr.val != dummyPtr.val){
+//                 dummyPtr.next = new ListNode(ptr.val);
+//                 dummyPtr = dummyPtr.next;
+//             }
+//             ptr = ptr.next;
+//         }
+//         return dummy.next;
+//     }
+// }
