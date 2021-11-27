@@ -17,7 +17,6 @@ public class Solution {
             
             if(set.add(p)){
                 p = p.next;
-                continue;
             } 
             else{
                 p = p.next;
