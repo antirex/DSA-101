@@ -37,22 +37,12 @@ class Solution
         long[] res = new long[n];
         Stack<Long> stack = new Stack<>();
         for(int i =n-1;i>=0;i--){
-            if(stack.isEmpty()){
-              res[i] = -1;  
-              
-            } 
-            else if(stack.peek()>arr[i] ){
-                res[i] = stack.peek();
-
-            }
+            if(stack.isEmpty()) res[i] = -1;  
+            else if(stack.peek()>arr[i] ) res[i] = stack.peek();
             else if(stack.peek()<=arr[i]){
                 while(!stack.isEmpty() && stack.peek()<=arr[i]) stack.pop();
-                if(stack.isEmpty()) {
-                    res[i] = -1;  
-                }
-                else {
-                    res[i] = stack.peek();
-                }
+                if(stack.isEmpty()) res[i] = -1;  
+                else res[i] = stack.peek();
             }
             stack.push(arr[i]);
         }
