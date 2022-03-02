@@ -39,23 +39,22 @@ class Solution
         for(int i =n-1;i>=0;i--){
             if(stack.isEmpty()){
               res[i] = -1;  
-              stack.push(arr[i]);
+              
             } 
             else if(stack.peek()>arr[i] ){
                 res[i] = stack.peek();
-                stack.push(arr[i]);
+
             }
             else if(stack.peek()<=arr[i]){
                 while(!stack.isEmpty() && stack.peek()<=arr[i]) stack.pop();
                 if(stack.isEmpty()) {
                     res[i] = -1;  
-                    stack.push(arr[i]);
                 }
                 else {
                     res[i] = stack.peek();
-                    stack.push(arr[i]);
                 }
-            } 
+            }
+            stack.push(arr[i]);
         }
         return res;
     } 
