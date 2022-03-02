@@ -45,7 +45,7 @@ class Solution
                 res[i] = stack.peek();
                 stack.push(arr[i]);
             }
-            else if(!stack.isEmpty() && stack.peek()<=arr[i]){
+            else if(stack.peek()<=arr[i]){
                 while(!stack.isEmpty() && stack.peek()<=arr[i]) stack.pop();
                 if(stack.isEmpty()) {
                     res[i] = -1;  
