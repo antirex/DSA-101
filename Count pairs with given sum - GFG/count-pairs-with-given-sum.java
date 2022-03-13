@@ -37,9 +37,7 @@ class Solution {
         for(int i =0;i<n;i++){
             int diff = k -arr[i];
             if(map.containsKey(diff))  count+=map.get(diff);
-            map.putIfAbsent(arr[i],0);
-          map.put(arr[i],map.get(arr[i])+1);
-            // map.put(arr[i],map.getOrDefault(arr[i]+1,0));
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
         }
         return count;
     }
