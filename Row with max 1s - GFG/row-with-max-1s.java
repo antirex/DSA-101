@@ -39,9 +39,7 @@ class Solution {
         int index = -1;
         for(int i =0;i<n;i++){
             int x =0;
-            for(int j =0;j<m;j++){
-                x+=arr[i][j];
-            }
+            for(int j =0;j<m;j++) x+=arr[i][j];
             if(res<x){
                 res =x;
                 index = i;
