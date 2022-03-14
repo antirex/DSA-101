@@ -62,17 +62,9 @@ class Solution
         // code here 
         ArrayList<Integer> arr = new ArrayList<>();
         HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i =0;i<n1;i++){
-            if(!map.containsKey(A[i])) map.put(A[i],1);
-
-        } 
-        for(int i =0;i<n2;i++){
-            if(map.containsKey(B[i])) map.put(B[i],2);
-        } 
-        for(int i =0;i<n3;i++){
-            if(map.containsKey(C[i])) if(map.get(C[i])==2 && !arr.contains(C[i])) arr.add(C[i]);
-            
-        } 
+        for(int i =0;i<n1;i++) if(!map.containsKey(A[i])) map.put(A[i],1);
+        for(int i =0;i<n2;i++) if(map.containsKey(B[i])) map.put(B[i],2);
+        for(int i =0;i<n3;i++) if(map.containsKey(C[i])) if(map.get(C[i])==2 && !arr.contains(C[i])) arr.add(C[i]);
         return arr;
     }
 }
