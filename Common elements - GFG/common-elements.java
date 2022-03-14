@@ -61,10 +61,20 @@ class Solution
     {
         // code here 
         ArrayList<Integer> arr = new ArrayList<>();
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i =0;i<n1;i++) if(!map.containsKey(A[i])) map.put(A[i],1);
-        for(int i =0;i<n2;i++) if(map.containsKey(B[i])) map.put(B[i],2);
-        for(int i =0;i<n3;i++) if(map.containsKey(C[i])) if(map.get(C[i])==2 && !arr.contains(C[i])) arr.add(C[i]);
+        int i =0,j=0,k=0;
+        while(i<n1 && j<n2 && k<n3){
+            if(A[i]==B[j] && B[j]==C[k]){
+              if(!arr.contains(A[i])) arr.add(A[i]);
+              i++;j++;k++;
+            }
+            else if(A[i]<B[j]) i++;
+            else if(B[j]<C[k]) j++;
+            else k++;
+        }
+        // HashMap<Integer,Integer> map = new HashMap<>();
+        // for(int i =0;i<n1;i++) if(!map.containsKey(A[i])) map.put(A[i],1);
+        // for(int i =0;i<n2;i++) if(map.containsKey(B[i])) map.put(B[i],2);
+        // for(int i =0;i<n3;i++) if(map.containsKey(C[i])) if(map.get(C[i])==2 && !arr.contains(C[i])) arr.add(C[i]);
         return arr;
     }
 }
