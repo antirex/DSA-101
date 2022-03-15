@@ -35,6 +35,6 @@ class Solution{
         };
        
         if((B-A)%C==0 && (B-A)/C>0) return 1;
-        else return 0;
+        return 0;
     }
 }
