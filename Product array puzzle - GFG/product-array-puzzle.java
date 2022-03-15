@@ -51,10 +51,6 @@ class Solution
             else if(zeroCount==1 && nums[i]!=0) res[i]=0;
             else if(nums[i]!=0 && zeroCount==0) res[i] =prod/(long) nums[i];  
             else res[i] =prod;
-        //   if(nums[i]!=0 && zeroCount==1) res[i] = 0;
-        //   else if(zeroCount>1) res[i]
-        //   else if(nums[i]!=0) res[i] =prod/(long) nums[i];  
-        //   else res[i] =prod;
         } 
         return res;
 	} 
