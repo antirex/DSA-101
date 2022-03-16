@@ -41,13 +41,11 @@ class Solution
     public boolean findPair(int arr[], int size, int n)
     {
         //code here.
-        if(n==0) return false;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i =0;i<size;i++) map.put(arr[i], i);
-        for(int i =0;i<size;i++){
-            int diff = Math.abs(n-arr[i]);
-            if(map.containsKey(diff)) return true;
+       Arrays.sort(arr);
+       for(int i=0;i<size;i++){
+           int idx = Arrays.binarySearch(arr,n+arr[i]);
+           if(idx>0 && idx!=i) return true;
         }
-        return false;
+    return false;
     }
 }
