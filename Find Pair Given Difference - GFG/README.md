@@ -26,7 +26,9 @@ You need not take input or print anything. Your task is to complete the function
 <strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
-1 ≤ L ≤ 10<sup>4</sup><br>
-1 ≤ Arr[i], N ≤ 10<sup>5</sup></span></p>
+1&lt;=L&lt;=10<sup>4&nbsp;</sup><br>
+1&lt;=Arr[i]&lt;=10<sup>5&nbsp;</sup></span></p>
+
+<p><span style="font-size:18px">0&lt;=N&lt;=10<sup>5</sup></span></p>
  <p></p>
             </div>
