@@ -42,8 +42,12 @@ class Solution
     {
         //code here.
         HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i =0;i<size;i++) map.put(arr[i],i);
-        for(int i =0;i<size;i++) if(map.containsKey(Math.abs(n-arr[i]))) return true;
+        for(int i =0;i<size;i++) map.put(arr[i], i);
+        if(n==0) return false;
+        for(int i =0;i<size;i++){
+            int diff = Math.abs(n-arr[i]);
+            if(map.containsKey(diff)) return true;
+        }
         return false;
     }
 }
