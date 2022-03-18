@@ -49,12 +49,7 @@ class Solution
            charsFreq2[str2.charAt(i)]++;
        }
        
-       for(int i = 0;i<n1;i++)
-       {
-           if(charsFreq1[str1.charAt(i)] !=charsFreq2[str2.charAt(i)])
-               return false;
-       }
-       
+       for(int i = 0;i<n1;i++) if(charsFreq1[str1.charAt(i)] !=charsFreq2[str2.charAt(i)]) return false;
        return true;
     }
 }
