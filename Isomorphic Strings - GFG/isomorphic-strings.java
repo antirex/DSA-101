@@ -42,8 +42,6 @@ class Solution
        
        int[] charsFreq1 = new int[256];
        int[] charsFreq2 = new int[256];
-       Arrays.fill(charsFreq1,0);
-       Arrays.fill(charsFreq2,0);
        
        for(int i = n1-1;i>=0;i--)
        {
