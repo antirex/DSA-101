@@ -43,7 +43,7 @@ class Solution
        int[] charsFreq1 = new int[256];
        int[] charsFreq2 = new int[256];
        
-       for(int i = n1-1;i>=0;i--)
+       for(int i = 0;i<n1;i++)
        {
            charsFreq1[str1.charAt(i)]++;
            charsFreq2[str2.charAt(i)]++;
