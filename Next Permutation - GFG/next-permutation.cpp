@@ -11,7 +11,7 @@ class Solution{
 public:
     vector<int> nextPermutation(int n, vector<int> arr){
         // code here
-        if(arr.size()<=0) return arr;
+        if(arr.size()<2) return arr;
         int idx = -1;
         for(int i = n-1;i>0;i--){
             if(arr[i]>arr[i-1]){
