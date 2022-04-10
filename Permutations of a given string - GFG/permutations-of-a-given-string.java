@@ -44,12 +44,11 @@ class Solution {
             result.add(str);
             return;
         }
-        
         TreeSet<Character> chars2 = new TreeSet<>(chars);//T2
         for(Character ch: chars) {
             chars2.remove(ch);
             recur(chars2, result, str+ch);
-            chars2.add(ch);
+            chars2= new TreeSet<>(chars);
         }
     }
 }
