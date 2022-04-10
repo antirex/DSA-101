@@ -24,9 +24,7 @@ class Solution {
         Stack<Character> st = new Stack<>();
         String res = "";
         for(int i =0;i<S.length();i++) st.push(S.charAt(i));
-        while(!st.isEmpty()) {
-            res+=st.pop();
-        }
+        while(!st.isEmpty()) res+=st.pop();
         return res;
     }
 
