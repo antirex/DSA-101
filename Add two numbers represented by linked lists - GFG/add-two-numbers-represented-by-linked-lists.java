@@ -103,7 +103,7 @@ class Solution{
     }
     public static Node reverse(Node head){
         Node curr = head;
-        Node next = null;
+        Node next = head;
         Node prev = null;
         while(curr!=null){
             next = curr.next;
