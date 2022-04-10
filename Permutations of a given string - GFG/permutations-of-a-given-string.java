@@ -28,28 +28,27 @@ class GFG
 
 class Solution {
     public List<String> find_permutation(String S) {
-        TreeSet<Character> chars = new TreeSet<>();
+        TreeSet<Character> chars = new TreeSet<>();//T1
         for(int i=0;i<S.length();++i) chars.add(S.charAt(i));
         List<String> res = new ArrayList<>();
-        recur(chars, res, "", S.length());
+        recur(chars, res, "");
         return res;
     }
     
     private void recur(
         TreeSet<Character> chars, 
         List<String> result, 
-        String str, 
-        int k
+        String str
     ) {
-        if (str.length() == k) {
+        if (chars.isEmpty()) {
             result.add(str);
             return;
         }
         
-        TreeSet<Character> chars2 = new TreeSet<>(chars);
+        TreeSet<Character> chars2 = new TreeSet<>(chars);//T2
         for(Character ch: chars) {
             chars2.remove(ch);
-            recur(chars2, result, str+ch, k);
+            recur(chars2, result, str+ch);
             chars2.add(ch);
         }
     }
