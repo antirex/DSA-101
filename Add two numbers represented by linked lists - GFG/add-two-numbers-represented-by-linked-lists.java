@@ -82,10 +82,10 @@ class Solution{
         // code here
         // return head of sum list
         int carry = 0;
-        Node p, dummy = new Node(0);
+        Node dummy = new Node(0);
         first = reverse(first);
         second = reverse(second);
-        p = dummy;
+        Node p = dummy;
         while (first != null || second != null || carry != 0) {
             if (first != null) {
             carry += first.data;
