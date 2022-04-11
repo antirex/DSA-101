@@ -39,7 +39,7 @@ class Solution
             else map.put(arr[i], map.get(arr[i])+1);
         }
         int max = 0;
-        for(int i =0;i<arr.length;i++) if(max<map.get(arr[i])) max = map.get(arr[i]);
+        for(int i =0;i<arr.length;i++) max = Math.max(max, map.get(arr[i]));
         int secMax = 0;
         for(int i =0;i<arr.length;i++){
            if(map.get(arr[i])>secMax && max>map.get(arr[i])){
