@@ -40,9 +40,7 @@ class Solution
         // your code here
         Collections.sort(a);
         long ans = Long.MAX_VALUE;
-        for(int i =0;i+m-1<n;i++){
-            ans = Math.min(ans, a.get((int) (i+m-1))-a.get((int) i));
-        }
+        for(int i =0;i+m-1<n;i++) ans = Math.min(ans, a.get((int) (i+m-1))-a.get((int) i));
         return ans;
     }
 }
