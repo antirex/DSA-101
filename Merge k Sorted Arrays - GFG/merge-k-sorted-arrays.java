@@ -44,7 +44,7 @@ class Solution
                 pq.add(arr[i][j]);
             }
         }
-        while(pq.size()>0) list.add(pq.poll());
+        while(pq.size()>0) list.add(pq.remove());
         return list;
     }
 }
