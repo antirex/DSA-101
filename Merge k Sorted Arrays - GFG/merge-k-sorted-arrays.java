@@ -40,9 +40,7 @@ class Solution
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         ArrayList<Integer> list = new ArrayList<>();
         for(int i = 0; i< arr.length; i++){
-            for(int j = 0; j< arr[0].length; j++){
-                pq.add(arr[i][j]);
-            }
+            for(int j = 0; j< arr[0].length; j++) pq.add(arr[i][j]);
         }
         while(pq.size()>0) list.add(pq.remove());
         return list;
