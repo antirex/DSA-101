@@ -85,21 +85,37 @@ class Solution
     Node mergeKList(Node[]arr,int K)
     {
         //Add your code here.
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Node> pq = new PriorityQueue<>((a, b)->Integer.compare(a.data, b.data));
         Node res = new Node(0);
         Node temp = res;
-        for(int i =0;i<arr.length;i++){
-            Node curr=arr[i];
-            while(curr!=null){
-                pq.add(curr.data);
-                curr=curr.next;
-            }
-        } 
+        for(int i = 0; i<arr.length; i++) pq.add(arr[i]);
         // System.out.println(pq);
         while(pq.size()>0){
-            temp.next = new Node(pq.remove());
-            temp = temp.next;
+            Node curr = pq.remove();
+            temp.next = new Node(curr.data);
+            if(curr.next!=null){
+               pq.add(curr.next);
+               curr = curr.next; 
+            }
+            temp = temp.next; 
         }
-        return res.next;
+        return res.next; 
     }
 }
+
+// PriorityQueue<Integer> pq = new PriorityQueue<>();
+//         Node res = new Node(0);
+//         Node temp = res;
+//         for(int i =0;i<arr.length;i++){
+//             Node curr=arr[i];
+//             while(curr!=null){
+//                 pq.add(curr.data);
+//                 curr=curr.next;
+//             }
+//         } 
+//         // System.out.println(pq);
+//         while(pq.size()>0){
+//             temp.next = new Node(pq.remove());
+//             temp = temp.next;
+//         }
+//         return res.next;
