@@ -31,6 +31,7 @@ class Solution
 {
     static int majorityElement(int arr[], int size)
     {
+        //O(1) SC with Boore-Moyer algo
         int major = arr[0], count = 1;
         for(int i = 1;i<size; i++){
             if(major == arr[i]) count++;
@@ -48,6 +49,7 @@ class Solution
         return -1;
     }
 }
+//O(N) SC
 // HashMap<Integer, Integer> map = new HashMap<>();
 //         for(int i =0;i<size;i++){
 //             if(!map.containsKey(arr[i])) map.put(arr[i], 1);
