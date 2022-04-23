@@ -31,12 +31,27 @@ class Solution
 {
     static int majorityElement(int arr[], int size)
     {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i =0;i<size;i++){
-            if(!map.containsKey(arr[i])) map.put(arr[i], 1);
-            else map.put(arr[i], map.get(arr[i])+1);
-            if(map.get(arr[i]) > size/2) return arr[i];
+        int major = arr[0], count = 1;
+        for(int i = 1;i<size; i++){
+            if(major == arr[i]) count++;
+            else count--;
+            if(count == 0){
+                count = 1;
+                major = arr[i];
+            }
         }
+        int countReal = 0;
+        for(int i =0;i<size;i++){
+            if(major == arr[i]) countReal++;
+        }
+        if(countReal>size/2) return major;
         return -1;
     }
 }
+// HashMap<Integer, Integer> map = new HashMap<>();
+//         for(int i =0;i<size;i++){
+//             if(!map.containsKey(arr[i])) map.put(arr[i], 1);
+//             else map.put(arr[i], map.get(arr[i])+1);
+//             if(map.get(arr[i]) > size/2) return arr[i];
+//         }
+//         return -1;
