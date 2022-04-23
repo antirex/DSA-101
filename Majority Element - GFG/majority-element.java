@@ -32,14 +32,14 @@ class Solution
     static int majorityElement(int arr[], int size)
     {
         //O(1) SC with Boore-Moyer algo
-        int major = arr[0], count = 1;
-        for(int i = 1;i<size; i++){
+        int major = Integer.MIN_VALUE, count = 0;
+        for(int i = 0;i<size; i++){
             if(major == arr[i]) count++;
-            else count--;
-            if(count == 0){
+            else if(count == 0){
                 count = 1;
                 major = arr[i];
             }
+            else count--;
         }
         int countReal = 0;
         for(int i =0;i<size;i++){
