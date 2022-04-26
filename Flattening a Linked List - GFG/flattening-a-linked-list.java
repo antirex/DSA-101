@@ -132,9 +132,7 @@ class GfG
 	        Node temp = pq.remove();
             ptr.bottom=temp;
             ptr = temp;
-	        if(temp.bottom!=null){
-	            pq.add(temp.bottom);
-	        } 
+	        if(temp.bottom!=null) pq.add(temp.bottom);
 	    }
 	    return dummy.bottom;
     }
