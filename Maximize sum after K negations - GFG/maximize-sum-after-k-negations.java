@@ -51,7 +51,6 @@ class Solution {
         Arrays.sort(a);
         for(int i = 0;i<n;i++) sum+=a[i];
         if(k%2==0) return sum;
-        else return sum - 2*a[0];
-        
+        return sum - 2*a[0];
     }
 }
