@@ -48,7 +48,6 @@ class Solution{
                 else t[i][j] = t[i-1][j];
             }
         }
-        
         if(t[N][(sum/2)]) return 1;
         return 0;
     }
